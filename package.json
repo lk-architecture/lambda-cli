@@ -2,7 +2,10 @@
   "name": "lambda-boilerplate-cli",
   "version": "1.0.0",
   "description": "Lambda boilerplate cli tool",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "bin": {
+    "lambda-boilerplate-cli": "lib/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lk-architecture/lk-lambda-cli"
@@ -11,7 +14,6 @@
     "axios": "^0.15.2",
     "babel-polyfill": "^6.9.1",
     "dashify": "^0.2.2",
-    "dotenv": "^2.0.0",
     "fs-extra": "^0.30.0",
     "vorpal": "^1.11.4"
   },
@@ -27,16 +29,19 @@
     "eslint": "^3.1.1",
     "mocha": "^3.1.2",
     "nyc": "^8.3.1",
+    "rimraf": "^2.5.4",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf lib coverage",
     "cli": "npm run build && NODE_PATH=lib node lib/index.js",
     "codecov": "NODE_ENV=test NODE_PATH=src nyc mocha report --reporter=text-lcov > coverage.lcov --recursive && codecov",
     "coverage": "NODE_ENV=test NODE_PATH=src nyc mocha --recursive",
     "dev": "npm test -- --watch",
     "lint": "eslint src test",
+    "prepublish": "npm run clean && npm run build",
     "test": "NODE_PATH=src NODE_ENV=test mocha --compilers js:babel-core/register --recursive"
   },
   "nyc": {
