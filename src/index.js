@@ -13,7 +13,7 @@ cli
     .action(initCommand);
 
 cli
-    .delimiter("lambda-boilerplate-cli$")
+    .delimiter("lk-lambda-cli$")
     .parse(process.argv);
 
 export default cli;

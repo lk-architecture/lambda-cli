@@ -1,10 +1,10 @@
 {
-  "name": "lambda-boilerplate-cli",
+  "name": "lk-lambda-cli",
   "version": "1.0.0",
   "description": "Lambda boilerplate cli tool",
   "main": "lib/index.js",
   "bin": {
-    "lambda-boilerplate-cli": "lib/index.js"
+    "lk-lambda-cli": "lib/index.js"
   },
   "repository": {
     "type": "git",
