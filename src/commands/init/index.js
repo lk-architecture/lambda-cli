@@ -39,5 +39,5 @@ export default async function wrappedInitCommand() {
 
     console.log(services);
 
-    await initCommand(lambda.name, organization, services);
+    await initCommand(lambda.name, organization.name, services.selected);
 }
