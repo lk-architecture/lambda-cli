@@ -22,8 +22,12 @@ export function modifyFiles(lambdaName, organizationName) {
 
     const readmePath = `${WORKING_PATH}/README.md`;
 
+    let updatedReadme;
+
     const templateReadme = fs.readFileSync(readmePath, "utf-8");
-    const updatedReadme = templateReadme.replace(new RegExp("${placeholder}", "gi"), `${organizationName}/${lambdaName}`);
+
+    updatedReadme = templateReadme.replace(new RegExp("org/lk-architecture/lk-lambda-boilerplate", "gi"), `org/${organizationName}/${lambdaName}`);
+    updatedReadme = updatedReadme.replace("# lk-lambda-boilerplate", `# ${lambdaName}`);
 
     fs.writeFileSync(readmePath, updatedReadme, "utf-8");
 }
