@@ -18,7 +18,7 @@ import {initCommand} from "commands/init";
 describe("Cli tool", () => {
 
     it("Init-lambda command", async () => {
-        const initCommand = cli.commands.find(x => x._name == "init");
+        const initCommand = cli.find("init");
         expect(!!initCommand).to.be.equal(true);
     });
 

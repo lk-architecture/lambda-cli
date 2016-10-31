@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import "babel-polyfill";
 
 import vorpal from "vorpal";
@@ -12,6 +14,6 @@ cli
 
 cli
     .delimiter("lambda-boilerplate-cli$")
-    .show();
+    .parse(process.argv);
 
 export default cli;
