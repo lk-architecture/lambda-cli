@@ -1,0 +1,8 @@
+.env
+.nyc_output/
+bundle.zip
+coverage/
+lib/
+node_modules/
+npm-debug.log
+yarn.lock

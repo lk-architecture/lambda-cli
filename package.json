@@ -1,0 +1,51 @@
+{
+  "name": "lambda-boilerplate-cli",
+  "version": "1.0.0",
+  "description": "Lambda boilerplate cli tool",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lk-architecture/lk-lambda-cli"
+  },
+  "dependencies": {
+    "axios": "^0.15.2",
+    "babel-polyfill": "^6.9.1",
+    "dashify": "^0.2.2",
+    "dotenv": "^2.0.0",
+    "fs-extra": "^0.30.0",
+    "vorpal": "^1.11.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-istanbul": "^2.0.3",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "eslint": "^3.1.1",
+    "mocha": "^3.1.2",
+    "nyc": "^8.3.1",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "cli": "npm run build && NODE_PATH=lib node lib/index.js",
+    "codecov": "NODE_ENV=test NODE_PATH=src nyc mocha report --reporter=text-lcov > coverage.lcov --recursive && codecov",
+    "coverage": "NODE_ENV=test NODE_PATH=src nyc mocha --recursive",
+    "dev": "npm test -- --watch",
+    "lint": "eslint src test",
+    "test": "NODE_PATH=src NODE_ENV=test mocha --compilers js:babel-core/register --recursive"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "author": "Team Wattellina <wattellina@mondora.com>",
+  "license": "Apache-2.0"
+}
