@@ -1,7 +1,7 @@
 import fs from "fs";
 import fsExtra from "fs-extra";
 
-import {WORKING_PATH} from "config";
+import {WORKING_PATH} from "../../../config";
 
 export function modifyFiles(lambdaName, organizationName) {
 

@@ -1,5 +1,6 @@
 import {execSync} from "child_process";
-import {LOG_LEVEL} from "config";
+
+import {LOG_LEVEL} from "../config";
 
 export default function wrappedExecSync(command, options) {
     if (LOG_LEVEL === "debug") {

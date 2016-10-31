@@ -1,7 +1,7 @@
 import {get} from "axios";
 
-import {WORKING_PATH} from "config";
-import execSync from "services/exec-sync";
+import {WORKING_PATH} from "../../../config";
+import execSync from "../../../services/exec-sync";
 
 export async function copyFiles() {
 

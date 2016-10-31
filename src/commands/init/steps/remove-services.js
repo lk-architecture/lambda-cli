@@ -6,7 +6,7 @@ import {
     SERVICES_PATH,
     SRC_PATH,
     WORKING_PATH
-} from "config";
+} from "../../../config";
 
 export function removeServices(selectedServices) {
 

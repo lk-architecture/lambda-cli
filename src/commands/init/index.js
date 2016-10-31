@@ -4,7 +4,7 @@ import {removeServices} from "./steps/remove-services";
 
 import {
     SERVICES
-} from "config";
+} from "../../config";
 
 export async function initCommand(lambdaName, organizationName, selectedServices) {
     await copyFiles();
